@@ -1,0 +1,16 @@
+{
+  "name": "ti2-traductor-ocr",
+  "version": "1.0.0",
+  "description": "Project for Taller de Investigacion II: Traductor ESP a Lengua de señas using OCR aand Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Sofia Mondaca, Miguel Murillo, Ivan Torres, Caleb Medina",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "nodemon": "^2.0.16",
+    "tesseract.js": "^2.1.5"
+  },
+  "type": "module"
+}
