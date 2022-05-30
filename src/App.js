@@ -35,7 +35,7 @@ function App() {
 
 		// Here it changes. So that it won't print the signs twice,
 		// because it's only called when counter is 1.
-		// Pretty ad-hoc solution, but for now i's enough, I hope
+		// Pretty ad-hoc solution, but for now it's enough, I hope
 		counter++;	
 	}
 
