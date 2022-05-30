@@ -2,11 +2,6 @@ import { useState, useEffect } from 'react';
 import {createWorker} from 'tesseract.js';
 import './App.css';
 
-// This App() function gets called at least twice
-// so, to avoid repeating printing the signs twice as well,
-// we use this variable
-var counter = 1;
-
 function App() {
 	const [selectedImage, setSelectedImage] = useState(null);
 	const [textResult, setTextResult] = useState("");
@@ -30,13 +25,8 @@ function App() {
 		setSelectedImage(e.target.files[0]);
 	}
 
-	if (textResult !== '' && counter === 1) {
-		printSigns(textResult);
-
-		// Here it changes. So that it won't print the signs twice,
-		// because it's only called when counter is 1.
-		// Pretty ad-hoc solution, but for now it's enough, I hope
-		counter++;	
+	if (textResult !== '') {
+		printSigns(textResult);	
 	}
 
 	return( 
@@ -72,6 +62,14 @@ function isLetter(letter='') {
 
 function printSigns(text='') {
 	let div = document.getElementById('signs');
+
+	// Delete all child nodes (signs) in case another
+	// translation comes in
+	// Also somehow ensures only one set of signs is printed
+	// instead of 2. Lucky accident!
+	while (div.firstChild) {
+		div.removeChild(div.firstChild);
+	}
 
 	for (const elem of text) {
 		if (isLetter(elem)) {
