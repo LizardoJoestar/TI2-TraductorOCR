@@ -11,4 +11,5 @@ root.render(
   </React.StrictMode>
 );
 
+console.log('Text result: ' + App.data.text);
 reportWebVitals();
